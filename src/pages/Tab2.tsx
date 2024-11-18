@@ -22,8 +22,14 @@ import { usePhotoGallery } from '../hooks/usePhotoGallery';
 
 const Tab2: React.FC = () => {
 
+
   const { photos, takePhoto } = usePhotoGallery();
 
+  photos.forEach( photo => {console.log(photo.filepath); console.log("THIS IS THE FILE PATH");
+
+
+  });
+  
   return (
     <IonPage>
       <IonHeader>
@@ -42,7 +48,7 @@ const Tab2: React.FC = () => {
         <IonGrid>
             <IonRow>
               {photos.map((photo, index) => (
-                <IonCol size="4" key={photo.filepath}>
+                <IonCol size="6" key={photo.filepath}>
                   <IonImg src={photo.webviewPath} />
                 </IonCol>
               ))}
